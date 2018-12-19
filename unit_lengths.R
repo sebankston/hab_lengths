@@ -7,7 +7,7 @@ library(readxl)
 
 test <- read_csv("nfm_unit_lengths.csv")
 
-test %>% filter(unit == "ber_005") %>% leaflet() %>% addProviderTiles("Esri", group = "Streets") %>% addProviderTiles("Esri.WorldImagery", group = "Aerials") %>% addCircleMarkers(label = ~paste0(unit, ":", location), radius = 5, color = "dodgerblue", fillOpacity = 1) %>% addLayersControl(baseGroups = c("Streets", "Aerials"))
+test %>% leaflet() %>% addProviderTiles("Esri", group = "Streets") %>% addProviderTiles("Esri.WorldImagery", group = "Aerials") %>% addCircleMarkers(label = ~paste0(unit, ":", location), radius = 5, color = "dodgerblue", fillOpacity = 1) %>% addLayersControl(baseGroups = c("Streets", "Aerials"))
 
 hab_data <- read_excel("ber_unit_lengths_completed.xls") %>% clean_names()
 
